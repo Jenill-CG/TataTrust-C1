@@ -102,7 +102,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block','State_ID','Group_ID','SP_ID']].copy()
     data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block','State_ID','Group_ID','SP_ID']].copy()
     data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
-    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
+    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name','State_ID','Group_ID','SP_ID']
     # Generate Teacher_Codes sheet
     teacher_codes = data[['School', 'School_ID']].copy()
     teacher_codes.columns = ['School Name', 'School Code']
