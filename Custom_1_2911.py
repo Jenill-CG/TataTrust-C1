@@ -751,11 +751,11 @@ def main():
                 'STUDENT ID': 15,
                 'STUDENT NAME': 72,
                 'GENDER': 12,
-                'TAB ID': 18,
-                'SUBJECT 1': 16,
+                # 'TAB ID': 18,
+                'SUBJECT 1': 34,
                 'SUBJECT 2': 16,
-                'SECTION': 12,
-                'SESSION': 12
+                # 'SECTION': 12,
+                'SESSION': 24
             }
 
         # selected_option = st.selectbox("➡️ Choose your file naming format", list(naming_options.keys()))
