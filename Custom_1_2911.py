@@ -73,6 +73,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district
     data['Partner_ID'] = str(partner_id).zfill(len(str(partner_id)))  # Padding Partner_ID
     data['Grade'] = grade
     data['group'] = group
+    group = 1
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
     # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
     data['School_udise'] = data['School_ID']
@@ -505,7 +506,7 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3, col4 = st.columns([1,1,1,1])
+            col1, col2, col3 = st.columns([1,1,1])
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
@@ -513,8 +514,6 @@ def main():
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
-            with col4: 
-                group = st.number_input("Group Id", min_value=1, value=1)
 
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
