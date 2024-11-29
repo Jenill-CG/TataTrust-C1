@@ -604,6 +604,7 @@ def main():
                             partner_id,
                             buffer_percent,
                             grade,
+                            group,
                             district_digits,
                             block_digits,
                             school_digits,
