@@ -506,7 +506,7 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3 = st.columns([1,1,1,1,1,1])
+            col1, col2, col3,col4,col5,col6 = st.columns([1,1,1,1,1,1])
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=1, value=1)
             with col2:
