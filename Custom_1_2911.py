@@ -585,6 +585,9 @@ def main():
             district_digits if 'District' in part else 
             len(str(grade)) if 'Grade' in part else 
             len(str(partner_id)) if 'Partner' in part else 
+            len(str(State_ID)) if 'state' in part else
+            len(str(Group_ID)) if 'group' in part else
+            len(str(SP_ID)) if 'sp' in part else
             student_digits)}" for part in format_parts])
 
             school_format = 'X' * school_digits
