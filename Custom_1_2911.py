@@ -98,10 +98,10 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district
     # Use the selected parameter set for generating Custom_ID
     data_expanded['Custom_ID'] = data_expanded.apply(lambda row: generate_custom_id(row, parameter_mapping[selected_param]), axis=1)
     # Generate the additional Excel sheets with mapped columns (without the Gender column)
-    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block']].copy()
-    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block']].copy()
-    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
-    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
+    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block','group']].copy()
+    data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block','group']].copy()
+    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name','group']
+    data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name','group']
     # Generate Teacher_Codes sheet
     teacher_codes = data[['School', 'School_ID']].copy()
     teacher_codes.columns = ['School Name', 'School Code']
