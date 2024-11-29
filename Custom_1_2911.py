@@ -266,11 +266,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(15, 4, '', border='LTR', align='C')
         pdf.cell(72, 4, '', border='LTR', align='C')
         pdf.cell(12, 4, '', border='LTR', align='C')
-        pdf.cell(18, 4, '', border='LTR', align='C')
+        # pdf.cell(18, 4, '', border='LTR', align='C')
+        pdf.cell(34, 4, '', border='LTR', align='C')
         pdf.cell(16, 4, '', border='LTR', align='C')
-        pdf.cell(16, 4, '', border='LTR', align='C')
-        pdf.cell(12, 4, '', border='LTR', align='C')
-        pdf.cell(12, 4, '', border='LTR', align='C')  # End of the row
+        # pdf.cell(12, 4, '', border='LTR', align='C')
+        pdf.cell(24, 4, '', border='LTR', align='C')  # End of the row
 
         pdf.ln(4)
         # First row of headers
@@ -278,11 +278,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(15, 0.5, 'STUDENT ID', border='LR', align='C')
         pdf.cell(72, 0.5, 'STUDENT NAME', border='LR', align='C')
         pdf.cell(12, 0.5, 'GENDER', border='LR', align='C')
-        pdf.cell(18, 0.5, 'TAB ID', border='LR', align='C')
-        pdf.cell(16, 0.5, 'SUBJECT 1', border='LR', align='C')
-        pdf.cell(16, 0.5, 'SUBJECT 2', border='LR', align='C')
-        pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
-        pdf.cell(12, 0.5, 'SESSION', border='LR', align='C')  # End of the row
+        # pdf.cell(18, 0.5, 'TAB ID', border='LR', align='C')
+        pdf.cell(34, 0.5, 'HOME LANGUAGE', border='LR', align='C')
+        pdf.cell(16, 0.5, 'MATH', border='LR', align='C')
+        # pdf.cell(12, 0.5, 'SECTION', border='LR', align='C')
+        pdf.cell(24, 0.5, 'LANGUAGE', border='LR', align='C')  # End of the row
 
         # Move to the next line
         pdf.ln(0.5)
@@ -293,11 +293,11 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
         pdf.cell(15, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT ID
         pdf.cell(72, 4.5, '', border='LBR', align='C')  # Empty cell under STUDENT NAME
         pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under GENDER
-        pdf.cell(18, 4.5, '', border='LBR', align='C')  # Empty cell under TAB ID
-        pdf.cell(16, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 1
-        pdf.cell(16, 4.5, 'Present/Absent', border='LBR', align='C')  # Empty cell under SUBJECT 2
-        pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
-        pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
+        # pdf.cell(18, 4.5, '', border='LBR', align='C')  # Empty cell under TAB ID
+        pdf.cell(34, 4.5, '', border='LBR', align='C')  # Empty cell under SUBJECT 1
+        pdf.cell(16, 4.5, '', border='LBR', align='C')  # Empty cell under SUBJECT 2
+        # pdf.cell(12, 4.5, '', border='LBR', align='C')  # Empty cell under SECTION
+        pdf.cell(24, 4.5, '', border='LBR', align='C')  # Empty cell under SESSION
         pdf.ln(4.5)
     # pdf.ln(4.5)
 
