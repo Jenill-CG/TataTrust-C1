@@ -23,7 +23,9 @@ parameter_descriptions = {
     'A5': "District + Block + School + Grade + Student",
     'A6': "Partner + Block + School + Grade + Student",
     'A7': "Partner + District + School + Grade + Student",
-    'A8': "Partner + District + Block + School + Grade + Student"
+    'A8': "Partner + District + Block + School + Grade + Student",
+    'A9': "state_id + sp_id + group_id + School_ID + Grade + student_no"
+    
 }
 
 # Define the new mapping for parameter sets
@@ -35,7 +37,9 @@ parameter_mapping = {
     'A5': "District_ID,Block_ID,School_ID,Grade,student_no",
     'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
     'A7': "Partner_ID,District_ID,School_ID,Grade,student_no",
-    'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no"
+    'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no",
+    'A9': "State_ID,SP_ID,Group_ID,School_ID,Grade,student_no"
+    
 }
 
 # Dropdown for selecting file naming format
@@ -502,14 +506,20 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3 = st.columns([1,1,1])
+            col1, col2, col3 = st.columns([1,1,1,1,1,1])
             with col1:
-                partner_id = st.number_input("Partner ID", min_value=12, value=12)
+                partner_id = st.number_input("Partner ID", min_value=1, value=1)
             with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
+            with col4:
+                State_ID = st.number_input("State", min_value=1, value=1)
+            with col5:
+                SP_ID = st.number_input("SP_ID", min_value=1, value=1)
+            with col6:
+                Group_ID = st.number_input("GP_ID", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
