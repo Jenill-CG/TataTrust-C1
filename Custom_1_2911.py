@@ -23,9 +23,7 @@ parameter_descriptions = {
     'A5': "District + Block + School + Grade + Student",
     'A6': "Partner + Block + School + Grade + Student",
     'A7': "Partner + District + School + Grade + Student",
-    'A8': "Partner + District + Block + School + Grade + Student",
-    'A9': "state_id + sp_id + group_id + School_ID + Grade + student_no"
-    
+    'A8': "Partner + District + Block + School + Grade + Student"
 }
 
 # Define the new mapping for parameter sets
@@ -37,9 +35,7 @@ parameter_mapping = {
     'A5': "District_ID,Block_ID,School_ID,Grade,student_no",
     'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
     'A7': "Partner_ID,District_ID,School_ID,Grade,student_no",
-    'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no",
-    'A9': "State,Sp,Group,School_ID,Grade,student_no"
-    
+    'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no"
 }
 
 # Dropdown for selecting file naming format
@@ -74,9 +70,6 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     # Assign the Partner_ID directly
     data['Partner_ID'] = str(partner_id).zfill(len(str(partner_id)))  # Padding Partner_ID
     data['Grade'] = grade
-    data['State_ID'] = State
-    data['Group_ID'] = Group
-    data['SP_ID'] = Sp
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
     # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
     data['School_udise'] = data['School_ID']
@@ -102,9 +95,9 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     # Use the selected parameter set for generating Custom_ID
     data_expanded['Custom_ID'] = data_expanded.apply(lambda row: generate_custom_id(row, parameter_mapping[selected_param]), axis=1)
     # Generate the additional Excel sheets with mapped columns (without the Gender column)
-    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block',"State_ID"]].copy()
+    data_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_ID', 'District', 'Block']].copy()
     data_original_mapped = data_expanded[['Custom_ID', 'Grade', 'School', 'School_udise', 'District', 'Block']].copy()
-    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name',"State_ID"]
+    data_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
     data_original_mapped.columns = ['Roll_Number', 'Grade', 'School Name', 'School Code', 'District Name', 'Block Name']
     # Generate Teacher_Codes sheet
     teacher_codes = data[['School', 'School_ID']].copy()
@@ -509,20 +502,14 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3,col4,col5,col6 = st.columns([1,1,1,1,1,1])
+            col1, col2, col3 = st.columns([1,1,1])
             with col1:
-                partner_id = st.number_input("Partner ID", min_value=1, value=1)
+                partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=0.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
-            with col4:
-                State = st.number_input("State_ID", min_value=1, value=1)
-            with col5:
-                Sp = st.number_input("SP_ID", min_value=1, value=1)
-            with col6:
-                Group = st.number_input("Group_ID", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
@@ -588,9 +575,6 @@ def main():
             district_digits if 'District' in part else 
             len(str(grade)) if 'Grade' in part else 
             len(str(partner_id)) if 'Partner' in part else 
-            len(str(State)) if 'state' in part else
-            len(str(Group)) if 'group' in part else
-            len(str(Sp)) if 'sp' in part else
             student_digits)}" for part in format_parts])
 
             school_format = 'X' * school_digits
