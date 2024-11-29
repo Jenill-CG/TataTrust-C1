@@ -579,7 +579,7 @@ def main():
             block_digits if 'Block' in part else 
             district_digits if 'District' in part else 
             len(str(grade)) if 'Grade' in part else 
-            # len(str(group)) if 'group' in part else 
+            len(str(group)) if 'group' in part else 
             len(str(partner_id)) if 'Partner' in part else 
             student_digits)}" for part in format_parts])
 
