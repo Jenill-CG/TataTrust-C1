@@ -58,7 +58,7 @@ def generate_custom_id(row, params):
             custom_id.append(str(value))
     return ''.join(custom_id)
 
-def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district_digits, block_digits, school_digits, student_digits, selected_param):
+def process_data(uploaded_file, partner_id, buffer_percent, grade,district_digits, block_digits, school_digits, student_digits, selected_param):
     data = pd.read_excel(uploaded_file)
     # Check for duplicate School_IDs
     if data['School_ID'].duplicated().any():
