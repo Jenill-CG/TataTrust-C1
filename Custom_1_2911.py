@@ -58,7 +58,7 @@ def generate_custom_id(row, params):
             custom_id.append(str(value))
     return ''.join(custom_id)
 
-def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district_digits, block_digits, school_digits, student_digits, selected_param):
+def process_data(uploaded_file, partner_id, buffer_percent, grade,district_digits, block_digits, school_digits, student_digits, selected_param):
     data = pd.read_excel(uploaded_file)
     # Check for duplicate School_IDs
     if data['School_ID'].duplicated().any():
@@ -72,7 +72,8 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district
     # Assign the Partner_ID directly
     data['Partner_ID'] = str(partner_id).zfill(len(str(partner_id)))  # Padding Partner_ID
     data['Grade'] = grade
-    data['group'] = data['group_id']
+    data['group'] = group
+    
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
     # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
     data['School_udise'] = data['School_ID']
@@ -604,7 +605,6 @@ def main():
                             partner_id,
                             buffer_percent,
                             grade,
-                            group,
                             district_digits,
                             block_digits,
                             school_digits,
