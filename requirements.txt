@@ -1,0 +1,11 @@
+fpdf
+openpyxl
+pandas
+numpy
+streamlit>=1.38.0
+xlsxwriter
+streamlit_pdf_viewer
+streamlit_folium 
+plotly
+#gspread
+#oauth2client.service_account
