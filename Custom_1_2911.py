@@ -38,7 +38,7 @@ parameter_mapping = {
     'A6': "Partner_ID,Block_ID,School_ID,Grade,student_no",
     'A7': "Partner_ID,District_ID,School_ID,Grade,student_no",
     'A8': "Partner_ID,District_ID,Block_ID,School_ID,Grade,student_no",
-    'A9': "State_ID,SP_ID,Group_ID,School_ID,Grade,student_no"
+    'A9': "State,Sp,Group,School_ID,Grade,student_no"
     
 }
 
