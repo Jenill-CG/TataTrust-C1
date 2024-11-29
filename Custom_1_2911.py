@@ -76,7 +76,7 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade, district_digi
     data['Grade'] = grade
     data['State_ID'] = State
     data['Group_ID'] = Group
-    data['SP_ID'] = SP
+    data['SP_ID'] = Sp
     # Assign unique IDs for District, Block, and School, default to "00" for missing values
     # data['School_udise'] = data['School_ID'].astype(str).str.zfill(12)
     data['School_udise'] = data['School_ID']
@@ -518,11 +518,11 @@ def main():
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
             with col4:
-                State_ID = st.number_input("State_ID", min_value=1, value=1)
+                State = st.number_input("State_ID", min_value=1, value=1)
             with col5:
-                SP_ID = st.number_input("SP_ID", min_value=1, value=1)
+                Sp = st.number_input("SP_ID", min_value=1, value=1)
             with col6:
-                Group_ID = st.number_input("Group_ID", min_value=1, value=1)
+                Group = st.number_input("Group_ID", min_value=1, value=1)
   
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
 
