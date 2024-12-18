@@ -495,7 +495,7 @@ def main():
                 vb = st.write("")
             # grade = st.number_input("Grade", min_value=1, value=1)
             # buffer_percent = 0
-            buffer_percent = 0.0
+            buffer_percent = 10.0
             district_digits = district_digit_count
             block_digits = block_digit_count
             school_digits = school_digit_count
