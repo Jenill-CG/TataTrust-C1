@@ -508,7 +508,7 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3, col4, col5 = st.columns([1,1,1,1,1])
+            col1, col2, col3, col4 = st.columns([1,1,1,1)
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
@@ -516,9 +516,7 @@ def main():
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
-            with col4:
-                minusvar =st.number_input("Show-Grade", min_value=-1, max_value=1, value=0)
-            with col5: 
+            with col4: 
                 group = st.number_input("Group Id", min_value=1, value=1)
 
             # partner_id = st.number_input("Partner ID", min_value=12, value=12)
