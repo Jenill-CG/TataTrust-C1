@@ -508,13 +508,13 @@ def main():
             # # Custom parameters
             # st.markdown("<p style='color: blue;'>Please provide required Values</p>", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Values", unsafe_allow_html=True)
-            col1, col2, col3, col4 = st.columns([1,1,1,1)
+            col1, col2, , col4 = st.columns([1,1,1,1])
             with col1:
                 partner_id = st.number_input("Partner ID", min_value=12, value=12)
             with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=10.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
-            with col3:        
+            with :        
                 grade = st.number_input("Grade", min_value=1, value=1)
             with col4: 
                 group = st.number_input("Group Id", min_value=1, value=1)
@@ -542,12 +542,12 @@ def main():
             # st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Digits", unsafe_allow_html=True)
 
-            col1, col2, col3, col4 = st.columns([1,1,1,1])
+            col1, col2, , col4 = st.columns([1,1,1,1])
             with col1:
                 district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
             with col2:
                 block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            with col3:
+            with :
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
             with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
