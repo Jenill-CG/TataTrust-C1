@@ -85,9 +85,8 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district
     # Generate student IDs based on the calculated Total Students With Buffer
     def generate_student_ids(row):
         if pd.notna(row['Total_Students_With_Buffer']) and row['Total_Students_With_Buffer'] > 0:
-            row['Grade-1'] = row['Grade'] -1
             student_ids = [
-                f"{row['School_ID']}{str(int(row['Grade-1'])).zfill(2)}{str(i).zfill(student_digits)}"
+                f"{row['School_ID']}{str(int(row['Grade'])).zfill(2)}{str(i).zfill(student_digits)}"
                 for i in range(1, int(row['Total_Students_With_Buffer']) + 1)
             ]
             return student_ids
@@ -653,7 +652,7 @@ def main():
         grouped = df.groupby(grouping_columns).agg(student_count=('STUDENT ID', 'nunique')).reset_index()
 
         if 'CLASS' in grouped.columns and grouped['CLASS'].astype(str).str.contains('\D').any():
-            grouped['CLASS'] = grouped['CLASS'].astype(str).str.extract('(\d+)')
+            grouped['CLASS'] = grouped['CLASS'].astype(str).str.extract('(\d+)')-1
 
         result = grouped.to_dict(orient='records')
 
