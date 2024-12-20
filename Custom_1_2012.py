@@ -542,12 +542,12 @@ def main():
             # st.markdown("""➡️ Please provide required Digits <span style='color: blue;'>(Please select more than "minimum required value")</span></p>""", unsafe_allow_html=True)
             st.markdown("➡️ Please provide required Digits", unsafe_allow_html=True)
 
-            col1, col2, , col4 = st.columns([1,1,1,1])
+            col1, col2,col3 , col4 = st.columns([1,1,1,1])
             with col1:
                 district_digits = st.number_input("District ID Digits", min_value=district_digit_count, value=2)
             with col2:
                 block_digits = st.number_input("Block ID Digits", min_value=block_digit_count, value=2)
-            with :
+            with col3:
                 school_digits = st.number_input("School ID Digits", min_value=school_digit_count, value=5)
             with col4:
                 student_digits = st.number_input("Student ID Digits", min_value=student_digit_count, value=5)
