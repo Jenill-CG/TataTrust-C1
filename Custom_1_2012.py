@@ -217,10 +217,10 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
 
     # Reset the font back to the original for the remaining labels
     pdf.set_font('Arial', 'B', 5)
-    # minusvar = info_labels['CLASS']-1
+    minusone = info_labels['CLASS']-minusvar
     
     # Add the CLASS and SECTION labels
-    pdf.cell(info_cell_width, 3, f"CLASS : {minusvar}", border='LR', ln=1)
+    pdf.cell(info_cell_width, 3, f"CLASS : {minusone}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"SCHOOL CODE : {info_labels['SCHOOL CODE']}", border='LR', ln=1)
 
     # Draw a border around the table header
@@ -516,7 +516,7 @@ def main():
             with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
             with col4:
-                minusvar =st.number_input("Show-Grade", min_value=1, value=1)
+                minusvar =st.number_input("Show-Grade", min_value=-1, max_value=1, value=0)
             with col5: 
                 group = st.number_input("Group Id", min_value=1, value=1)
 
