@@ -514,7 +514,7 @@ def main():
             with col2:
                 buffer_percent = st.number_input("Buffer Percentage", min_value=0.0, value=10.0, format="%.2f")
                 # buffer_percent =st.slider("Buffer Percentage",min_value=0.0,max_value=50.0,value=(0.0, 50.0),step=5.0)
-            with :        
+            with col3:        
                 grade = st.number_input("Grade", min_value=1, value=1)
             with col4: 
                 group = st.number_input("Group Id", min_value=1, value=1)
