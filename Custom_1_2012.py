@@ -219,7 +219,7 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.set_font('Arial', 'B', 5)
 
     # Add the CLASS and SECTION labels
-    pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']}", border='LR', ln=1)
+    pdf.cell(info_cell_width, 3, f"CLASS : {info_labels['CLASS']-1}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"SCHOOL CODE : {info_labels['SCHOOL CODE']}", border='LR', ln=1)
 
     # Draw a border around the table header
@@ -652,7 +652,7 @@ def main():
         grouped = df.groupby(grouping_columns).agg(student_count=('STUDENT ID', 'nunique')).reset_index()
 
         if 'CLASS' in grouped.columns and grouped['CLASS'].astype(str).str.contains('\D').any():
-            grouped['CLASS'] = grouped['CLASS'].astype(str).str.extract('(\d+)')-1
+            grouped['CLASS'] = grouped['CLASS'].astype(str).str.extract('(\d+)')
 
         result = grouped.to_dict(orient='records')
 
