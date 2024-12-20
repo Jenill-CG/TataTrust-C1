@@ -81,11 +81,12 @@ def process_data(uploaded_file, partner_id, buffer_percent, grade,group,district
     data['School_ID'] = data['School_ID'].apply(lambda x: str(data['School_ID'].unique().tolist().index(x) + 1).zfill(school_digits) if x != "NA" else "0".zfill(school_digits))
     # Calculate Total Students With Buffer based on the provided buffer percentage
     data['Total_Students_With_Buffer'] = np.floor(data['Total_Students'] * (1 + buffer_percent / 100))
+    row['Grade-1'] = row['Grade'] -1
     # Generate student IDs based on the calculated Total Students With Buffer
     def generate_student_ids(row):
         if pd.notna(row['Total_Students_With_Buffer']) and row['Total_Students_With_Buffer'] > 0:
             student_ids = [
-                f"{row['School_ID']}{str(int(row['Grade'])).zfill(2)}{str(i).zfill(student_digits)}"
+                f"{row['School_ID']}{str(int(row['Grade-1'])).zfill(2)}{str(i).zfill(student_digits)}"
                 for i in range(1, int(row['Total_Students_With_Buffer']) + 1)
             ]
             return student_ids
