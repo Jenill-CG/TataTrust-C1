@@ -219,7 +219,8 @@ def create_attendance_pdf(pdf, column_widths, column_names, image_path, info_val
     pdf.set_font('Arial', 'B', 5)
     
     minusone = info_labels['CLASS']
-    
+    #minusone = info_labels['CLASS']+1
+
     # Add the CLASS and SECTION labels
     pdf.cell(info_cell_width, 3, f"CLASS : {minusone}", border='LR', ln=1)
     pdf.cell(info_cell_width, 3, f"SCHOOL CODE : {info_labels['SCHOOL CODE']}", border='LR', ln=1)
