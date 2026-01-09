@@ -384,8 +384,8 @@ def main():
     # Display the styled header
     # st.markdown("<div class='custom-header'>Welcome!</div>", unsafe_allow_html=True)
     # st.markdown("<div class='custom-header'>Tool for ID Generation</div>", unsafe_allow_html=True)
-    st.markdown("<div class='custom-header' style='background-color: #FFC0CB; text-align: center;padding: 15px; font-size: 40px;font-weight: bold;color: #FFFFFF; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);'>CGI's Custom ID Builder</div>", unsafe_allow_html=True)
-    st.markdown("<div class='custom-header' style='font-size: 26px;color: #F0BF4C;text-align: right;padding: 2px; background-color: #ffffff; margin-top: 2px;margin-bottom: 2px;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0);text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);'>Generate unique IDs quickly and easily!</div>", unsafe_allow_html=True)
+    st.markdown("<div class='custom-header' style='background-color: #FFB7C5; text-align: center;padding: 15px; font-size: 40px;font-weight: bold;color: #FFFFFF; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);'>CGI's Custom ID Builder</div>", unsafe_allow_html=True)
+    st.markdown("<div class='custom-header' style='font-size: 26px;color: #FFB7C5;text-align: right;padding: 2px; background-color: #ffffff; margin-top: 2px;margin-bottom: 2px;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0);text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);'>Generate unique IDs quickly and easily!</div>", unsafe_allow_html=True)
 
     # Data for the example table
     data = {
